@@ -1,7 +1,8 @@
 // TO-DO:
 // 1. eventListeners for buttons
 //      timer starts when start button is clicked
-// 2. Data attributes set and maleable for different questions/switching between questions
+// 2. Objects set for each question
+//      toggle between each for each question
 // 3. localStorage for high scores
 //      a place for the user to put their initials and have them stored alongside their score
 // 4. if statements for correct and incorrect answers

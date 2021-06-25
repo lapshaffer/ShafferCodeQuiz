@@ -1,6 +1,41 @@
 /* TO-DO:
-1. Set some global variables
+1. Set some global/root variables
 2. Style header pieces to sit on either side of screen
 3. Style click-able boxes, but make question boxes list items
 4. Style all text elements
 5. Style highscore page */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+:root {
+    --box-color: #f0db4f;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+header p {
+    display: inline-block;
+}
+
+header div {
+    position: relative;
+    display: inline-block;
+}
+
+main {
+    display: flex;
+}
+
+main section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

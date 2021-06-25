@@ -2,8 +2,8 @@
 1. Make header with link to highscores page on left-hand side and timer on right-hand side
 2. Make main page with quiz description and button to start quiz
     The start button, and the question buttons, should all share a class or id so they can be styled alike
-3. Store data attributes for each question? And unique ids for each question set
-    When a box from each question set is clicked, it switches to the next question stored in the data attributes
+3. Store OBJECTS for each question
+    I was thinking about this wrong initially, but each question should be stored in a js object. Updating js notes to reflect this
 4. Know which answers are right and wrong
     And have a place for the screen to say if they're right or wrong
 5. When quiz is finished, display score with option to input initials and submit
@@ -16,11 +16,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>JavaScript Quiz</title>
 </head>
 <body>
     <header>
-        <p>View Highscores</p>
+        <p><a href="highscores.html">View Highscores</a></p>
         <div>Timer: <span>60</span></div>
     </header>
     
@@ -31,5 +32,6 @@
             <button>Start Quiz</button>
         </section>
     </main>
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 </html>
