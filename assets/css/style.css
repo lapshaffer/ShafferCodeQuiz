@@ -14,6 +14,7 @@
     --box-color: #f0db4f;
 }
 
+/*2. Style header pieces to sit on either side of screen*/
 header {
     display: flex;
     width: 100%;
@@ -22,11 +23,13 @@ header {
 
 header p {
     display: inline-block;
+    padding: 5px 20px;
 }
 
 header div {
     position: relative;
     display: inline-block;
+    padding: 10px 25px;
 }
 
 main {
@@ -38,6 +41,19 @@ main section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+main p {
+    padding: 5px 150px;
+}
+
+main button {
+    margin-bottom: 30px;
+}
+
+#quiz {
+    background-color: var(--box-color);
+    line-height: 150%;
 }
 
 #highscores {
