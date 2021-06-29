@@ -14,6 +14,8 @@ var startButton = document.getElementById("start");
 var quizContainer = document.getElementById("quiz");
 var resultsContainer = document.getElementById("results");
 var timerElement = document.getElementById("timer");
+var secondsLeft = 60;
+var timerInterval;
 
 
 var quizQuestions = [
@@ -73,7 +75,7 @@ var quizQuestions = [
 function setTime() {
     var timerInterval = setInterval(function () {
         secondsLeft--;
-        timeElement.textContent = secondsLeft;
+        timerElement.textContent = "Timer: " + secondsLeft;
 
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
@@ -82,7 +84,7 @@ function setTime() {
     }
 
 function buildQuiz() {
-    setTime;
+    setTime();
     var output = [];
     quizQuestions.forEach(
         (currentQuestion, questionNumber) => {
@@ -106,25 +108,24 @@ function buildQuiz() {
     quizContainer.innerHTML = output.join('');
 };
 
-function showResults() {
-    var answerContainers = quizContainer.querySelectorAll('.answers');
-    var numberCorrect = 0
+// function showResults() {
+//     var answerContainers = quizContainer.querySelectorAll('.answers');
+//     var numberCorrect = 0
 
-    quizQuestions.forEach( (currentQuestion, questionNumber) => {
-        var answerContainer = answerContainers[questionNumber];
-        var selector = `input[name=question${questionNumber}]:checked`;
-        var userAnswer = (answerContainer.querySelector(selector) || {}).value;
+//     quizQuestions.forEach( (currentQuestion, questionNumber) => {
+//         var answerContainer = answerContainers[questionNumber];
+//         var selector = `input[name=question${questionNumber}]:checked`;
+//         var userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-        if (userAnswer === currentQuestion.correctAnswer) {
-            numberCorrect++;
-            answerContainers[questionNumber].style.color = "green";
-        } else {
-            secondsLeft-10;
-            answerContainers[questionNumber].style.color = "red";
-        }
-    }); 
-    resultsContainer.innerHTML = `${numberCorrect} out of ${quizQuestions.length}`;
-}
-
+//         if (userAnswer === currentQuestion.correctAnswer) {
+//             numberCorrect++;
+//             answerContainers[questionNumber].style.color = "green";
+//         } else {
+//             secondsLeft-10;
+//             answerContainers[questionNumber].style.color = "red";
+//         }
+//     }); 
+//     resultsContainer.innerHTML = `${numberCorrect} out of ${quizQuestions.length}`;
+// }
 
 startButton.addEventListener('click', buildQuiz);
